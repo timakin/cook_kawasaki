@@ -4,12 +4,25 @@ parser  = require 'xml2json'
 GURUNAVI_ACCESS_KEY = "b9afc347ce10cdb3e6846d26ad70bb8e"
 GURUNAVI_ORIGIN_URL = "http://api.gnavi.co.jp/ver2/RestSearchAPI/?"
 BUILDING_NAME = "ヒカリエ"
+gurl = 'http://google.com'
+yurl = 'http://yahoo.co.jp'
 
+testreq = (url) ->
+  new Promise((resolve, reject) ->
+    request url, (error, response, body) ->
+      if error
+        reject err
+      else
+        resolve body
+      return
+    return
+  )
 
 
 module.exports = (robot) ->
   robot.hear /はらへ/, (res) ->
     gurunavi_url = GURUNAVI_ORIGIN_URL + "keyid=" + GURUNAVI_ACCESS_KEY + '&latitude=35.65898718965676&longitude=139.70277630100122&range=4&freeword=' + encodeURIComponent(BUILDING_NAME)
+    console.log gurunavi_url
     request gurunavi_url, (_, result) ->
       str_first_body = parser.toJson(result.body)
       obj_first_body = JSON.parse str_first_body
@@ -23,3 +36,8 @@ module.exports = (robot) ->
           obj_body = JSON.parse str_body
           for restaurant in obj_body.response.rest
             res.send JSON.stringify(restaurant.name.name)
+
+  robot.hear /てすと/, (res) ->
+    Promise.all([testreq(gurl),testreq(yurl)]).then (results) ->
+      console.log results
+      return
