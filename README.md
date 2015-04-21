@@ -18,4 +18,7 @@ $ heroku config:set HUBOT_SLACK_TOKEN=[your token]
 $ heroku apps:info // Get you bot Web url for following setting.
 $ heroku config:set HUBOT_HEROKU_KEEPALIVE_URL=[your bot app url]
 $ git push heroku master
+
+// Random search for restaurant on slack
+@cook_kawasaki はらへ
 ```
