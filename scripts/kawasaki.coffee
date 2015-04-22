@@ -12,4 +12,7 @@ module.exports = (robot) ->
           gnavi_rests = []
           for rest_array_item in results
             gnavi_rests = gnavi_rests.concat(rest_array_item)
-          res.send gnavi_rests[Math.floor(Math.random()*gnavi_rests.length)]
+          gnavi_result = gnavi_rests[Math.floor(Math.random()*gnavi_rests.length)]
+          res.send "仕事きついよ〜給料安いよ〜休みないよ〜"
+          res.send gnavi_result["name"]
+          res.send gnavi_result["url"]
