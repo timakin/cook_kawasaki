@@ -64,7 +64,9 @@ module.exports = (robot) ->
     gurunavi_url = GURUNAVI_ORIGIN_URL + "keyid=" + GURUNAVI_ACCESS_KEY + '&latitude=35.65898718965676&longitude=139.70277630100122&range=4&freeword=' + encodeURIComponent(BUILDING_NAME)
     meshi.get_page_max(gurunavi_url)
       .then (page_max) => meshi.get_gnavi_data(page_max, gurunavi_url)
-      .then (results) => res.send results
+      .then (promise_array) =>
+        Promise.all(promise_array).then (results) =>
+          res.send results
 
   robot.hear /てすと/, (res) ->
     Promise.all([testreq(gurl),testreq(yurl)]).then (results) ->
