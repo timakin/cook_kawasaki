@@ -9,4 +9,7 @@ module.exports = (robot) ->
       .then (page_max) => meshi.get_gnavi_data(page_max)
       .then (promise_array) =>
         Promise.all(promise_array).then (results) =>
-          res.send results
+          gnavi_rests = []
+          for rest_array_item in results
+            gnavi_rests = gnavi_rests.concat(rest_array_item)
+          res.send gnavi_rests[Math.floor(Math.random()*gnavi_rests.length)]
