@@ -1,0 +1,77 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.7.3
+3 info using node@v0.12.1
+4 verbose node symlink /usr/local/bin/node
+5 verbose publish [ '.' ]
+6 silly cache add args [ '.', null ]
+7 verbose cache add spec .
+8 silly cache add parsed spec { raw: '.',
+8 silly cache add   scope: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: '.',
+8 silly cache add   spec: '/Users/seiji.takahashi/Desktop/cook_kawasaki',
+8 silly cache add   type: 'directory' }
+9 verbose addLocalDirectory /Users/seiji.takahashi/.npm/cook_kawasaki/0.3.0/package.tgz not in flight; packing
+10 verbose tar pack [ '/Users/seiji.takahashi/.npm/cook_kawasaki/0.3.0/package.tgz',
+10 verbose tar pack   '/Users/seiji.takahashi/Desktop/cook_kawasaki' ]
+11 verbose tarball /Users/seiji.takahashi/.npm/cook_kawasaki/0.3.0/package.tgz
+12 verbose folder /Users/seiji.takahashi/Desktop/cook_kawasaki
+13 info prepublish cook_kawasaki@0.3.0
+14 verbose addLocalTarball adding from inside cache /Users/seiji.takahashi/.npm/cook_kawasaki/0.3.0/package.tgz
+15 silly cache afterAdd cook_kawasaki@0.3.0
+16 verbose afterAdd /Users/seiji.takahashi/.npm/cook_kawasaki/0.3.0/package/package.json not in flight; writing
+17 verbose afterAdd /Users/seiji.takahashi/.npm/cook_kawasaki/0.3.0/package/package.json written
+18 silly publish { name: 'cook_kawasaki',
+18 silly publish   version: '0.3.0',
+18 silly publish   private: true,
+18 silly publish   author: { name: 'timakin', email: 'timaki.st@gmail.com' },
+18 silly publish   description: 'Eat meshi',
+18 silly publish   dependencies:
+18 silly publish    { hubot: '^2.12.0',
+18 silly publish      'hubot-diagnostics': '0.0.1',
+18 silly publish      'hubot-google-images': '^0.1.4',
+18 silly publish      'hubot-google-translate': '^0.1.0',
+18 silly publish      'hubot-help': '^0.1.1',
+18 silly publish      'hubot-heroku-keepalive': '0.0.4',
+18 silly publish      'hubot-maps': '0.0.2',
+18 silly publish      'hubot-pugme': '^0.1.0',
+18 silly publish      'hubot-redis-brain': '0.0.2',
+18 silly publish      'hubot-rules': '^0.1.0',
+18 silly publish      'hubot-scripts': '^2.5.16',
+18 silly publish      'hubot-shinchoku-dou': '0.0.3',
+18 silly publish      'hubot-shipit': '^0.1.2',
+18 silly publish      'hubot-slack': '^3.3.0',
+18 silly publish      'hubot-youtube': '^0.1.2',
+18 silly publish      request: '^2.55.0',
+18 silly publish      xml2json: '^0.6.1' },
+18 silly publish   engines: { node: '>=0.11.x' },
+18 silly publish   readme: 'cook_kawasaki\n==============\n![2515676_m.jpg](https://qiita-image-store.s3.amazonaws.com/0/16301/f440c84f-2709-0a49-2395-c09bd6c6aced.jpeg "2515676_m.jpg")\n\nEat happy meshi around Hikarie with your colleagues :D\n\n# How to use\n\n```\n// git clone and install node packages\n$ git clone git@github.com:timakin/cook_kawasaki.git\n$ cd cook_kawasaki\n$ npm install\n\n// heroku setting\n$ heroku login\n$ heroku create [bot_name] // in origin case, named cook_kawasaki\n$ heroku addons:add redistogo:nano\n$ heroku config:set HUBOT_SLACK_TOKEN=[your token]\n$ heroku apps:info // Get you bot Web url for following setting.\n$ heroku config:set HUBOT_HEROKU_KEEPALIVE_URL=[your bot app url]\n$ git push heroku master\n\n// Random search for restaurant on slack\n@cook_kawasaki はらへ\n```\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '53d1819bbf364844fbcd1221a71bad32bc6acc70',
+18 silly publish   _id: 'cook_kawasaki@0.3.0',
+18 silly publish   scripts: {},
+18 silly publish   _shasum: '783eae6d726ed18e7290649adf481401a8904df7',
+18 silly publish   _from: '.' }
+19 verbose stack Error: This package has been marked as private
+19 verbose stack Remove the 'private' field from the package.json to publish it.
+19 verbose stack     at publish_ (/usr/local/lib/node_modules/npm/lib/publish.js:108:5)
+19 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+19 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+19 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
+19 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+19 verbose stack     at /usr/local/lib/node_modules/npm/lib/publish.js:74:5
+19 verbose stack     at RES (/usr/local/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+19 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:17:25)
+19 verbose stack     at /usr/local/lib/node_modules/npm/lib/cache.js:355:14
+19 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/write-file-atomic/index.js:29:15
+20 verbose cwd /Users/seiji.takahashi/Desktop/cook_kawasaki
+21 error Darwin 14.1.0
+22 error argv "node" "/usr/local/bin/npm" "publish"
+23 error node v0.12.1
+24 error npm  v2.7.3
+25 error This package has been marked as private
+25 error Remove the 'private' field from the package.json to publish it.
+26 error If you need help, you may report this error at:
+26 error     <https://github.com/npm/npm/issues>
+27 verbose exit [ 1, true ]
