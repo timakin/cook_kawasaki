@@ -5,7 +5,7 @@ GURUNAVI_ACCESS_KEY = "b9afc347ce10cdb3e6846d26ad70bb8e"
 GURUNAVI_ORIGIN_URL = "http://api.gnavi.co.jp/ver2/RestSearchAPI/?"
 
 get_meshi_response = (res) ->
-  keywords = if res.match[1] then res.match[1] else "ヒカリエ"
+  keywords = if res.match[1] is undefined then "ヒカリエ" else res.match[1]
   GURUNAVI_URL = GURUNAVI_ORIGIN_URL + "keyid=" + GURUNAVI_ACCESS_KEY + '&freeword=' + encodeURIComponent(keywords);
   gnavi.get_page_max(GURUNAVI_URL)
     .then (page_max) => gnavi.get_restaurants_info(page_max, GURUNAVI_URL)
